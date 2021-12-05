@@ -1,0 +1,92 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f4665a96-9c52-4899-9466-a30adf2e6b14</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>06.PreTrainedBert.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>LocationMatrix</Name>
+    <RootNamespace>LocationMatrix</RootNamespace>
+    <InterpreterId>CondaEnv|CondaEnv|CommentClassifire</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="05.MergeCountyData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="10.TSNE.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="02.Summery.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="03.CountyData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="05.MergeAndCreateData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="06.PreTrainedBert.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="07.CosineSimilarity.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="01.PreProcess.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="11.1.TsnePlot-pyplot.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="11.2.TsnePlot-seaborn.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="12.1.K-Means_Cluster.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="12.2.K-Means_Cluster-With_Group.py.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="13.1.SVM-Converted.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="13.2.SVM-RealData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="13.3.SVM-RealData-All.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="14.1.RandomForest-Converted.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="14.2.RandomForest-RealData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="14.3.RandomForest-RealData-All.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="CondaEnv|CondaEnv|CommentClassifire" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
