@@ -41,9 +41,8 @@ class Cnn(object):
 		#https://medium.com/jatana/report-on-text-classification-using-cnn-rnn-han-f0e887214d5f
 		# For CNN, RNN and HAN
 
-		self.range = max(y_tr["labels"]) - min(y_tr["labels"]) + 1
-		self.y_tr = to_categorical(y_tr['labels'].values, dtype = "uint8")
-		self.y_test = to_categorical(y_test['labels'].values, dtype = "uint8")
+		self.y_tr = to_categorical(y_tr.values, dtype = "uint8")
+		self.y_test = to_categorical(y_test.values, dtype = "uint8")
 
 		self.X_tr = X_tr.values.reshape(X_tr.values.shape[0], X_tr.values.shape[1], 1)
 		self.X_test = X_test.values.reshape(X_test.values.shape[0], X_test.values.shape[1], 1)
@@ -57,38 +56,33 @@ class Cnn(object):
 		#model.add(Conv1D(filters=256, kernel_size=3, strides=1, activation='relu', input_shape=(self.X_tr.shape[1],1), name='block1_conv1'))
 		model.add(Input(shape=(self.X_tr.shape[1],1), name="Input_Layer"))#, batch_size=None
 		################################################################################
+
 		model.add(BatchNormalization(momentum=0.1, epsilon=1e-8, axis=1, name='block2_bn1'))
 		model.add(Conv1D(filters=block_1_layers+10, kernel_size=5, strides=1, activation='relu', name='block1_conv1'))
 		model.add(MaxPool1D(pool_size=min(6,int(math.sqrt(block_1_layers))), name='block1_pool1'))
 		#model.add(BatchNormalization(momentum=0.9, epsilon=1e-5, axis=1))
-		model.add(Dense(block_1_layers+5, activation='relu', name='block1_dense1'))
+		model.add(Dense(50, activation='relu', name='block1_dense1'))
 		model.add(Dropout(0.1, name='block1_drop1'))
 		#model.add(BatchNormalization(momentum=0.6, epsilon=1e-5, axis=1, name='block1_bn1'))
 
-		model.add(Conv1D(filters=block2_layers, kernel_size=3, strides=1, activation='relu', name='block2_conv1'))
-		model.add(MaxPool1D(pool_size=min(4, int(math.sqrt(block2_layers))), name='block2_pool1'))
-		model.add(Dense(block2_layers, activation='relu', name='block2_dense1'))
+		#model.add(Conv1D(filters=block2_layers, kernel_size=3, strides=1, activation='relu', name='block2_conv1'))
+		#model.add(MaxPool1D(pool_size=min(4, int(math.sqrt(block2_layers))), name='block2_pool1'))
+		model.add(Dense(20, activation='relu', name='block2_dense1'))
 		#model.add(Flatten(name='block1_flat1'))
 		model.add(Dropout(0.1, name='block2_drop1'))
 
 
-		model.add(Conv1D(filters=block3_layers, kernel_size=3, strides=1, activation='relu', name='block3_conv1'))
-		model.add(MaxPool1D(pool_size=min(3,int(math.sqrt(block3_layers))), name='block3_pool1'))
-		model.add(Dense(block3_layers, activation='relu', name='block3_dense1'))
+		#model.add(Conv1D(filters=block3_layers, kernel_size=3, strides=1, activation='relu', name='block3_conv1'))
+		#model.add(MaxPool1D(pool_size=min(3,int(math.sqrt(block3_layers))), name='block3_pool1'))
+		model.add(Dense(10, activation='relu', name='block3_dense1'))
 		#model.add(MaxoutDense(512, nb_feature=4, name="block2_maxout2"))
 		model.add(Dropout(0.1, name='block3_drop1'))
-
-		#model.add(Dense(16, activation='relu', name='block2_dense3', input_dim=5,
-		#	kernel_initializer='ones',
-		#	kernel_regularizer=tf.keras.regularizers.L1(0.01),
-		#	activity_regularizer=tf.keras.regularizers.L2(0.01)))
 
 		################################################################################
 		#model.add(Reshape((None, self.y_tr.shape[1]), name='block4_reshape1'))
 		model.add(Flatten(name='predict_flatten1'))
 		model.add(Dense(
 					self.y_tr.shape[1],
-					#self.range,
 					activation='softmax',
 					name="predict"
 				))
