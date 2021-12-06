@@ -7,16 +7,16 @@ from sklearn import svm
 from sklearn.ensemble import RandomForestClassifier
 #https://stackabuse.com/classification-in-python-with-scikit-learn-and-pandas
 
-NUMBER_OF_ITERATIONS = 200
+NUMBER_OF_ITERATIONS = 1
 
-rawData = "./data/Embedding/tsne.csv"
+rawData = "./data/Embedding/bert.csv"
 rawDataFrame = pd.read_csv(rawData, index_col=0)
 
 total = 0
 for i in range(NUMBER_OF_ITERATIONS):
 	train, test = train_test_split(rawDataFrame, test_size=0.2)
 
-	#y_tr =  train[["bomb threat", "cyberbullying", "harassment", "literature dump", "not specified", "performance", "vandalism"]]
+	y_columns = list(rawDataFrame.columns)
 	y_tr =  train[['ColorCode']]
 	X_tr = train[[s for s in train.columns if "paraphrase-MiniLM-L6-v2_embedding_" in s]]
 

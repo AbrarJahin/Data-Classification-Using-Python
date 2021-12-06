@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f4665a96-9c52-4899-9466-a30adf2e6b14</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>06.PreTrainedBert.py</StartupFile>
+    <StartupFile>15.1.CallCNN.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -25,7 +25,7 @@
     <Compile Include="05.MergeCountyData.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="10.TSNE.py">
+    <Compile Include="10.1.TSNE.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="02.Summery.py">
@@ -40,10 +40,10 @@
     <Compile Include="06.PreTrainedBert.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="07.CosineSimilarity.py">
+    <Compile Include="01.PreProcess.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="01.PreProcess.py">
+    <Compile Include="10.2.PCA.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="11.1.TsnePlot-pyplot.py">
@@ -58,7 +58,7 @@
     <Compile Include="12.2.K-Means_Cluster-With_Group.py.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="13.1.SVM-Converted.py">
+    <Compile Include="13.1.SVM-Converted%28Working%29.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="13.2.SVM-RealData.py">
@@ -73,7 +73,13 @@
     <Compile Include="14.2.RandomForest-RealData.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="14.3.RandomForest-RealData-All.py">
+    <Compile Include="14.3.RandomForest-RealData-All%28Working%29.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cnn.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="15.1.CallCNN.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
