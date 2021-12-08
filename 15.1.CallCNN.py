@@ -17,8 +17,8 @@ def callCnnForTsne():
     X_test = test[xColumns]
 
     model = Cnn(X_tr, y_tr, X_test, y_test, epochs = 10, batch_size = 512)
-    model.trainAndSaveModel()
-    df = model.savePrediction(X_test)
+    #model.trainAndSaveModel()
+    #df = model.savePrediction(X_test)
     print("Done")
 
 def callCnnForBert():

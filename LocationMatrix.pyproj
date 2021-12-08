@@ -76,6 +76,9 @@
     <Compile Include="14.3.RandomForest-RealData-All%28Working%29.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="16.KNN-All%28Working%29.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Cnn.py">
       <SubType>Code</SubType>
     </Compile>
